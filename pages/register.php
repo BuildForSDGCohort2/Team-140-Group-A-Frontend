@@ -28,10 +28,10 @@
                         <div class="form-group col-4 col-md-4">
                             <label for="gender">Gender</label>
                             <div class="select_drop_wrapper fontawesome_pseudo">
-                            <select id="inputGender" class="form-control">
-                                <option value="male" selected>Male</option>
-                                <option value="female">Female</option>
-                            </select>
+                                <select id="inputGender" class="form-control">
+                                    <option value="male" selected>Male</option>
+                                    <option value="female">Female</option>
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -57,13 +57,14 @@
                         <div class="form-group col-6">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                        <small id="emailHelp" class="form-text text-danger">Error message
-                            else.</small>
+                            <small id="emailHelp" class="form-text text-danger">Error message
+                                else.</small>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-block bg_primary_dark _btn">Register</button>
                     <small id="emailHelp" class="form-text text-darl">
-                        <span>Already have an account?</span>&nbsp;<strong><a href="./login.php" class="regular_link">Login</a></strong>
+                        <span>Already have an account?</span>&nbsp;<strong><a href="./login.php"
+                                class="regular_link">Login</a></strong>
                     </small>
                 </form>
             </div>

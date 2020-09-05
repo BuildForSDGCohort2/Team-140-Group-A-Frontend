@@ -155,10 +155,16 @@ body {
 /* Chrome, Safari, Edge, Opera */
 
 input {
-    &[type="number"]::-webkit-outer-spin-button,
-    &[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
+    &[type="number"] {
+        &::-webkit-inner-spin-button,
+         ::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
     }
+    // &[type="number"]::-webkit-outer-spin-button,
+    // &[type="number"]::-webkit-inner-spin-button {
+    //     -webkit-appearance: none;
+    // }
     /* Firefox */
     &[type="number"] {
         -moz-appearance: textfield;
