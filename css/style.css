@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-size: 14px; }
+
+.display_1 {
+  font-size: 2rem; }
+
+.display_2 {
+  font-size: 1.7rem; }
+
+.display_3 {
+  font-size: 1.4rem; }
+
+.text_uppercase {
+  text-transform: uppercase; }
+
+.text_lowercase {
+  text-transform: lowercase; }
+
+.text_capitalize {
+  text-transform: capitalize; }
+
+.bg_primary {
+  background-color: #3f50b5; }
+
+.bg_primary_light {
+  background-color: #757ce8; }
+
+.bg_primary_dark {
+  background-color: #002884; }
+  .bg_primary_dark._btn {
+    color: #ffffff; }
+    .bg_primary_dark._btn:hover {
+      background-color: #3f50b5; }
+
+.bg_secondary {
+  background-color: #212121; }
+
+.bg_secondary_light {
+  background-color: #484848; }
+
+.bg_secondary_dark {
+  background-color: #000000; }
+
+.text_primary {
+  color: #3f50b5; }
+
+.text_primary_light {
+  color: #757ce8; }
+
+.text_primary_dark {
+  color: #002884; }
+
+.text_secondary {
+  color: #212121; }
+
+.text_secondary_light {
+  color: #484848; }
+
+.text_secondary_dark {
+  color: #000000; }
+
+.focus_outline_none:focus {
+  outline: 0; }
+
+.form-control {
+  border-radius: 3px;
+  font-size: 0.8rem; }
+  .form-control:focus {
+    outline: 0;
+    box-shadow: none; }
+
+.custom_background_img {
+  background-image: url("../assets/images/main-custom-background-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.regular_link {
+  color: #757ce8;
+  transition: 3s ease; }
+  .regular_link:hover {
+    color: #3f50b5;
+    text-decoration-line: none; }
+
+.fontawesome_pseudo:after, .fontawesome_pseudo:before {
+  font-family: "font Awesome 5 Free";
+  font-weight: 900; }
+
+.select_drop_wrapper.fontawesome_pseudo:after {
+  margin-right: .4em; }
+
+/* Number inputs (removing the spin button arrows on the right side) */
+/* Chrome, Safari, Edge, Opera */
+input {
+  /* Firefox */ }
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; }
+  input[type="number"] {
+    -moz-appearance: textfield; }
+
+.left_content_wrapper {
+  display: flex;
+  align-items: center; }
+  .left_content_wrapper .inner {
+    margin-top: 3em; }
+
+.right_content_wrapper {
+  margin-top: 4em; }
+
+.bmi_calc_form_nav {
+  border-bottom: 1px solid #002884; }
+  .bmi_calc_form_nav .nav-link {
+    text-align: center;
+    color: #002884; }
+    .bmi_calc_form_nav .nav-link.active {
+      background-color: #002884; }
+
+.btn:focus {
+  outline: 0;
+  box-shadow: none; }
+
+.select_drop_wrapper {
+  position: relative;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: unset; }
+  .select_drop_wrapper::after {
+    content: "\f0dd";
+    font-size: 20px;
+    position: absolute;
+    right: 0.3em;
+    color: #3f50b5;
+    pointer-events: none;
+    bottom: 0.4em; }
+  .select_drop_wrapper:focus, .select_drop_wrapper:active {
+    outline: 0;
+    inset: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 255, 255, 0.6); }
+  .select_drop_wrapper select {
+    /* remove default style from browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: 100%; }
+    .select_drop_wrapper select:focus {
+      outline: 0; }
+    .select_drop_wrapper select option {
+      margin: 5em;
+      line-height: 2;
+      font: inherit;
+      font-size: 0.8rem; }
+    .select_drop_wrapper select::after {
+      content: "hhhhh"; }
+
+.login_page .main_inner_wrapper {
+  height: 90vh; }
+  .login_page .main_inner_wrapper .inner {
+    height: 100%;
+    display: flex;
+    align-items: center; }
+  .login_page .main_inner_wrapper .form_wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 0 auto; }
+
+.register_page .main_inner_wrapper {
+  padding-top: 2em; }
+  .register_page .main_inner_wrapper .inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em; }
+  .register_page .main_inner_wrapper .form_wrapper {
+    width: 100%;
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto; }
+
+.bmi_calculator_page .page_banner {
+  background-color: #212121;
+  background-image: url("../assets/images/page_banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: soft-light; }
+
+.hero {
+  height: 90vh;
+  width: 100%; }
+  .hero i.fas {
+    font-size: 2rem;
+    margin-top: 1.4em; }
+    .hero i.fas + p {
+      font-size: 0.7rem;
+      font-weight: 600; }
+
+@media (min-width: 700px) {
+  body {
+    font-size: 16px; }
+
+  .hero i.fas {
+    font-size: 4rem;
+    margin-top: 0; }
+    .hero i.fas + p {
+      font-size: 1rem; }
+
+  .left_content_wrapper .inner {
+    margin-top: 10em; }
+
+  .form-control {
+    font-size: 1rem; } }
+
+/*# sourceMappingURL=style.css.map */
