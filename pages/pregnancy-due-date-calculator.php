@@ -23,37 +23,38 @@
                         </div>
                         <!-- form -->
 
-                                <!-- Adult form -->
-                                <div class="container">
+                        <!-- Adult form -->
+                        <div class="container">
 
-                                    <form>
-                                        <div class="form-row">
-                                            <div class="form-group col-12">
-                                                <label for="calc_method">Choose a calculation method</label>
-                                                <div class="select_drop_wrapper fontawesome_pseudo">
-                                                    <select id="calc_method" name="calc_method" class="form-control">
-                                                        <option value="lastPeriod" selected>Last Period</option>
-                                                        <option value="conceptionDate">Conception date</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                            <form id="pregnancyTestform">
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <label for="calc_method">Choose a calculation method</label>
+                                        <div class="select_drop_wrapper fontawesome_pseudo">
+                                            <select id="calculationMethod" name="calc_method" class="form-control"
+                                                onchange="populateQuestion()">
+                                                <option value="When did you have your last period start?" selected>Last
+                                                    Period</option>
+                                                <option value="When did you conceive?">Conception date</option>
+                                            </select>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="form-group col-12">
-                                                <input type="text" class="w-100 border-0 form-control" value="When did your last period start?" readonly id="dateLabel">
-                                                <!-- if the value of 'calc_method' is 'Conception date', "dateLabel" will be equal to "When did you conceive?"  -->
-                                                <input type="date" class="form-control" id="date" name="date">
-                                            </div>
-                                        </div>
-                                        <button type="submit"
-                                            class="btn btn-block bg_primary_dark _btn">Calculate</button>
-                                        <small id="emailHelp" class="form-text text-darl">
-                                            <button type="button"
-                                                class="btn btn-sm border-0 form-text text-danger">Reset</button>
-                                        </small>
-                                    </form>
+                                    </div>
                                 </div>
-                                <!--  -->
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <input type="text" class="w-100 border-0 form-control"
+                                            value="When did you have your last period start?" readonly
+                                            id="pregnancyFormDateLabel">
+                                        <!-- if the value of 'calc_method' is 'Conception date', "dateLabel" will be equal to "When did you conceive?"  -->
+                                        <input type="date" class="form-control" id="pregnancyFormDate" name="date">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-block bg_primary_dark _btn" onclick="calcPregnancyDueDate()">Calculate</button>
+                                <small id="" class="form-text text-darl">
+                                </small>
+                            </form>
+                        </div>
+                        <!--  -->
                         <!--  -->
                     </div>
                 </div>
@@ -67,6 +68,45 @@
     </section>
 
 </div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pregnancyDueDateResultPopup">
+  Launch demo modal
+</button>
+
+<!-- BMI result modal popup -->
+<!-- Modal -->
+<div class="modal fade pregnancy_test_modal_popup" id="pregnancyDueDateResultPopup" tabindex="-1" role="dialog"
+    aria-labelledby="pregnancyDueDateResultPopupTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="text-center">
+                    <h5 class="modal-title" id="pregnancyDueDateResultPopupTitle">Result</h5>
+                </div>
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-none" id="bmi_adult_result_wrapper">
+                    <ul>
+                        <li>Age: <span id="resultAge"></span></li>
+                        <li>Gender: <span class="text_capitalize" id="resultGender"></span></li>
+                        <li>BMI Result: <span id="resultBMICalc"></span></li>
+                    </ul>
+                </div>
+                <div class="d-none" id="bmi_child_result_wrapper">
+                    <ul>
+                        <li>Age: <span id="childResultAge"></span></li>
+                        <li>Gender: <span class="text_capitalize" id="childResultGender"></span></li>
+                        <li>BMI Result: <span id="childResultBMICalc"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
 
 <!-- footer -->
 <?php include_once '../components/footer.php'; ?>

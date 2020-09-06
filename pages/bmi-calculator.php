@@ -40,38 +40,40 @@
                                 <!-- Adult form -->
                                 <div class="container">
 
-                                    <form>
+                                    <form id="adultBMIForm">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="height">Height</label>
-                                                <input type="text" class="form-control" id="height" name="height">
+                                                <label for="adultHeight">Height (inches)</label>
+                                                <input type="text" class="form-control" id="adultHeight"
+                                                    name="adultHeight">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="weight">Weight</label>
-                                                <input type="text" class="form-control" id="weight" name="weight">
+                                                <label for="adultWeight">Weight (kg)</label>
+                                                <input type="text" class="form-control" id="adultWeight"
+                                                    name="adultWeight">
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-6">
-                                                <label for="age">Age</label>
-                                                <input type="number" class="form-control" id="age" name="age">
+                                                <label for="adultAge">Age</label>
+                                                <input type="number" class="form-control" id="adultAge" name="adultAge">
                                             </div>
                                             <div class="form-group col-6">
-                                                <label for="gender">Gender</label>
+                                                <label for="adultGender">Gender</label>
                                                 <div class="select_drop_wrapper fontawesome_pseudo">
-                                                    <select id="inputGender" class="form-control">
+                                                    <select id="adultGender" class="form-control">
                                                         <option value="male" selected>Male</option>
                                                         <option value="female">Female</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit"
-                                            class="btn btn-block bg_primary_dark _btn">Calculate</button>
-                                        <small id="emailHelp" class="form-text text-darl">
+                                        <button type="button" class="btn btn-block bg_primary_dark _btn"
+                                            id="adultBMIFormBtn" onclick="calcAdultBMI()">Calculate</button>
+                                        <small id="" class="form-text text-darl">
                                             <button type="button"
-                                                class="btn btn-sm border-0 form-text text-danger">Reset</button>
+                                                class="btn btn-sm border-0 form-text text-danger" onclick="resetAdultForm()">Reset</button>
                                         </small>
                                     </form>
                                 </div>
@@ -83,67 +85,54 @@
                                 <!-- Child form -->
                                 <div class="container">
 
-                                    <form>
+                                    <form id="childBMIForm">
 
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
-                                                <label for="height">Height</label>
-                                                <input type="text" class="form-control" id="height" name="height">
+                                                <label for="childHeight">Height</label>
+                                                <input type="text" class="form-control" id="childHeight" name="height">
                                             </div>
                                             <div class="form-group col-md-6">
-                                                <label for="weight">Weight</label>
-                                                <input type="text" class="form-control" id="weight" name="weight">
+                                                <label for="childWeight">Weight</label>
+                                                <input type="text" class="form-control" id="childWeight" name="weight">
                                             </div>
                                         </div>
-                                        <!-- <div class="form-row">
-                                            <div class="form-group col-6">
-                                                <label for="age">Date of birth</label>
-                                                <input type="number" class="form-control" id="age" name="age">
-                                            </div>
-                                            <div class="form-group col-6">
-                                                <label for="gender">Gender</label>
-                                                <select id="inputGender" class="form-control">
-                                                    <option value="male" selected>Male</option>
-                                                    <option value="female">Female</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
                                         <div class="form-row">
                                             <div class="form-group col-12">
                                                 <label for="age">Date of birth</label>
                                                 <div class="form-row">
                                                     <div class="form-group col-3">
-                                                        <label for="day"><small>Day</small></label>
-                                                        <input type="number" class="form-control" id="day" name="day">
+                                                        <label for="childBirthDay"><small>Day</small></label>
+                                                        <input type="number" class="form-control" id="childBirthDay" name="day">
                                                     </div>
                                                     <div class="form-group col-3">
-                                                        <label for="month"><small>Month</small></label>
-                                                        <input type="number" class="form-control" id="month"
+                                                        <label for="childBirthMonth"><small>Month</small></label>
+                                                        <input type="number" class="form-control" id="childBirthMonth"
                                                             name="month">
                                                     </div>
                                                     <div class="form-group col-6">
-                                                        <label for="year"><small>Year</small></label>
-                                                        <input type="number" class="form-control" id="year" name="year">
+                                                        <label for="childBirthYear"><small>Year</small></label>
+                                                        <input type="number" class="form-control" id="childBirthYear" name="year">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-6">
-                                                <label for="gender">Gender</label>
+                                                <label for="childGender">Gender</label>
                                                 <div class="select_drop_wrapper fontawesome_pseudo">
-                                                    <select id="inputGender" class="form-control">
+                                                    <select id="childGender" class="form-control">
                                                         <option value="male" selected>Male</option>
                                                         <option value="female">Female</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit"
-                                            class="btn btn-block bg_primary_dark _btn">Calculate</button>
-                                        <small id="emailHelp" class="form-text text-darl">
+                                        <button type="button" class="btn btn-block bg_primary_dark _btn"
+                                            id="childBMIFormBtn" onclick="calcChildBMI()">Calculate</button>
+                                        <small id="" class="form-text text-darl">
                                             <button type="button"
-                                                class="btn btn-sm border-0 form-text text-danger">Reset</button>
+                                                class="btn btn-sm border-0 form-text text-danger" onclick="resetChildForm()">Reset</button>
                                         </small>
                                     </form>
                                 </div>
@@ -155,6 +144,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <section>
+
                         <p>BMI is a measurement of a person's leanness or corpulence based on their height and weight,
                             and is intended to quantify tissue mass. It is widely used as a general indicator of whether
                             a person has a healthy body weight for their height. Specifically, the value obtained from
@@ -168,7 +158,8 @@
                             underweight can have significant health effects, so while BMI is an imperfect measure of
                             healthy body weight, it is a useful indicator of whether any additional testing or action is
                             required. Refer to the table below to see the different categories based on BMI that is used
-                            by the calculator.</p>
+                            by the calculator.
+                        </p>
                     </section>
                 </div>
             </div>
@@ -176,6 +167,45 @@
     </section>
 
 </div>
+
+
+
+
+
+<!-- BMI result modal popup -->
+<!-- Modal -->
+<div class="modal fade bmi_test_modal_popup" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="text-center">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Result</h5>
+                </div>
+                <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-none" id="bmi_adult_result_wrapper">
+                    <ul>
+                        <li>Age: <span id="resultAge"></span></li>
+                        <li>Gender: <span class="text_capitalize" id="resultGender"></span></li>
+                        <li>BMI Result: <span id="resultBMICalc"></span></li>
+                    </ul>
+                </div>
+                <div class="d-none" id="bmi_child_result_wrapper">
+                    <ul>
+                        <li>Age: <span id="childResultAge"></span></li>
+                        <li>Gender: <span class="text_capitalize" id="childResultGender"></span></li>
+                        <li>BMI Result: <span id="childResultBMICalc"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
 
 <!-- footer -->
 <?php include_once '../components/footer.php'; ?>

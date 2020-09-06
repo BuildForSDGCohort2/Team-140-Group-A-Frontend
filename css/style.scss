@@ -196,6 +196,12 @@ input {
     }
 }
 
+.bmi_test_modal_popup {
+    ul {
+        list-style: none;
+    }
+}
+
 .btn {
     &:focus {
         outline: 0;

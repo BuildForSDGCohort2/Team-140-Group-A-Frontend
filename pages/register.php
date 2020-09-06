@@ -57,12 +57,12 @@
                         <div class="form-group col-6">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                            <small id="emailHelp" class="form-text text-danger">Error message
+                            <small id="" class="form-text text-danger">Error message
                                 else.</small>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-block bg_primary_dark _btn">Register</button>
-                    <small id="emailHelp" class="form-text text-darl">
+                    <small id="" class="form-text text-darl">
                         <span>Already have an account?</span>&nbsp;<strong><a href="./login.php"
                                 class="regular_link">Login</a></strong>
                     </small>

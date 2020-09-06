@@ -121,6 +121,9 @@ input {
     .bmi_calc_form_nav .nav-link.active {
       background-color: #002884; }
 
+.bmi_test_modal_popup ul {
+  list-style: none; }
+
 .btn:focus {
   outline: 0;
   box-shadow: none; }
