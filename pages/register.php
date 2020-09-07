@@ -8,7 +8,7 @@
             <div class="form_wrapper p-4 shadow">
                 <h5 class="text-center my-3">Register</h5>
                 <!-- form -->
-                <form>
+                <form action="#">
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
@@ -33,6 +33,12 @@
                                     <option value="female">Female</option>
                                 </select>
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-12">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone">
                         </div>
                     </div>
                     <div class="form-row">

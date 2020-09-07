@@ -227,6 +227,10 @@ input {
 }
 
 // COMPONENTS
+.sidenav_toggler {
+    display: none;
+}
+
 .left_content_wrapper {
     display: flex;
     align-items: center;
@@ -262,6 +266,10 @@ input {
         outline: 0;
         box-shadow: none;
     }
+}
+
+.rotate_45 {
+    transform: rotate(45deg);
 }
 
 .select_drop_wrapper {
@@ -429,5 +437,31 @@ input {
     }
     .form-control {
         font-size: 1rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .page_sidenav {
+        position: absolute;
+        z-index: 1;
+        width: 70vw;
+        height: 100%;
+        background-color: $misc;
+        transition: all 300ms ease-in-out;
+        &.hide {
+            left: -70vw;
+        }
+        nav {
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+        }
+    }
+    .sidenav_toggler {
+        display: block;
+        margin: .5em;
+        .fa-bars,
+        .rotate_45 {
+            color: $secondary-light;
+            font-size: 1.3rem;
+        }
     }
 }

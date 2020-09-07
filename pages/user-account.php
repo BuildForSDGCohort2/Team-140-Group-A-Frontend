@@ -51,7 +51,8 @@
                             <div>
                                 <strong>Address:</strong>&nbsp;<span>Lagos, Nigeria</span>
                             </div>
-                            <p><a href="#" class="text_danger">Edit</a></p>
+                            <div><a href="./user-profile-edit.php" class="text_danger">Edit</a></div>
+                            <div><a href="#" class="text_danger">Change Phone Number</a></div>
                         </div>
                     </div>
 

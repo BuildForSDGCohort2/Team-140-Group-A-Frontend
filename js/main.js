@@ -30,6 +30,22 @@ $(document).ready(function() {
 
 // VANILLA JS
 
+// toggle sidenav on mobile
+var page_sidenav = document.getElementById("page_sidenav");
+// var sidenav_toggler = document.getElementById("sidenav_toggler");
+function openSidenav() {
+    if (page_sidenav.classList.contains("hide")) {
+        page_sidenav.classList.remove("hide")
+    }
+}
+
+function closeSidenav() {
+    if (!page_sidenav.classList.contains("hide")) {
+        page_sidenav.classList.add("hide")
+    }
+}
+
+
 
 // BMI CALCUlATion FOR ADULT
 var adultBMIFormBtn = document.getElementById("adultBMIFormBtn");

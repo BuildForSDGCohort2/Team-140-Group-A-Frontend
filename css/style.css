@@ -149,6 +149,9 @@ input {
       right: 0;
       opacity: 0; }
 
+.sidenav_toggler {
+  display: none; }
+
 .left_content_wrapper {
   display: flex;
   align-items: center; }
@@ -172,6 +175,9 @@ input {
 .btn:focus {
   outline: 0;
   box-shadow: none; }
+
+.rotate_45 {
+  transform: rotate(45deg); }
 
 .select_drop_wrapper {
   position: relative;
@@ -290,5 +296,25 @@ input {
 
   .form-control {
     font-size: 1rem; } }
+@media (max-width: 600px) {
+  .page_sidenav {
+    position: absolute;
+    z-index: 1;
+    width: 70vw;
+    height: 100%;
+    background-color: #ffffff;
+    transition: all 300ms ease-in-out; }
+    .page_sidenav.hide {
+      left: -70vw; }
+    .page_sidenav nav {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+
+  .sidenav_toggler {
+    display: block;
+    margin: .5em; }
+    .sidenav_toggler .fa-bars,
+    .sidenav_toggler .rotate_45 {
+      color: #484848;
+      font-size: 1.3rem; } }
 
 /*# sourceMappingURL=style.css.map */
