@@ -50,11 +50,9 @@ function calcAdultBMI() {
         }
         adultHeight.value *= adultHeight.value
         let result = adultWeight.value / adultHeight.value;
-        // console.log(result)
-        alert("Your test result is " + result)
         resultAge.innerHTML = adultAge.value
         resultGender.innerHTML = adultGender.value
-        resultBMICalc.innerHTML = result
+        resultBMICalc.innerHTML = Math.ceil(result)
         $('#exampleModalCenter').modal('show')
     } else {
         return;
@@ -88,11 +86,9 @@ function calcChildBMI() {
         }
         childHeight.value *= childHeight.value
         let result = childWeight.value / childHeight.value;
-        // console.log(result)
-        alert("Your test result is " + result)
         childResultGender.innerHTML = childGender.value;
         childResultAge.innerHTML = `${childBirthDay.value}/${childBirthMonth.value}/${childBirthYear.value}`;
-        childResultBMICalc.innerHTML = result
+        childResultBMICalc.innerHTML = Math.ceil(result)
         $('#exampleModalCenter').modal('show')
     } else {
         return;
@@ -120,12 +116,21 @@ function populateQuestion() {
         const oneDay = 24 * 60 * 60 * 1000;
         const firstDate = x;
         const secondDate = y;
+        var pregnancy_test_result_wrapper = document.getElementById("pregnancy_test_result_wrapper");
+        var pregnancyDueDate;
 
         const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
         console.log(Math.floor(diffDays / 7))
         let z = Math.floor(diffDays / 7);
-        if (pregnancyFormDateLabel.value = "When did you have your last period start?") {
-            console.log(38 - z + "weeks")
+        if (pregnancyFormDateLabel.value === "When did you have your last period start?") {
+            console.log(40 - z);
+            pregnancyDueDate = 40 - z;
+            pregnancy_test_result_wrapper.innerHTML = pregnancyDueDate * 7 * 24;
+        }
+        if (pregnancyFormDateLabel.value === "When did you conceive?") {
+            console.log(38 - z);
+            pregnancyDueDate = 38 - z;
+            pregnancy_test_result_wrapper.innerHTML = pregnancyDueDate * 7 * 24;
         }
 
         $('#pregnancyDueDateResultPopup').modal('show')

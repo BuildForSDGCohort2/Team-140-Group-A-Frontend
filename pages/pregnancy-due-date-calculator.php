@@ -69,10 +69,6 @@
 
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pregnancyDueDateResultPopup">
-  Launch demo modal
-</button>
-
 <!-- BMI result modal popup -->
 <!-- Modal -->
 <div class="modal fade pregnancy_test_modal_popup" id="pregnancyDueDateResultPopup" tabindex="-1" role="dialog"
@@ -88,19 +84,15 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="d-none" id="bmi_adult_result_wrapper">
+                <!-- <div class="d-none" id="bmi_adult_result_wrapper">
                     <ul>
                         <li>Age: <span id="resultAge"></span></li>
                         <li>Gender: <span class="text_capitalize" id="resultGender"></span></li>
                         <li>BMI Result: <span id="resultBMICalc"></span></li>
                     </ul>
-                </div>
-                <div class="d-none" id="bmi_child_result_wrapper">
-                    <ul>
-                        <li>Age: <span id="childResultAge"></span></li>
-                        <li>Gender: <span class="text_capitalize" id="childResultGender"></span></li>
-                        <li>BMI Result: <span id="childResultBMICalc"></span></li>
-                    </ul>
+                </div> -->
+                <div class="" id="pregnancy_test_result_wrapper">                   
+                        
                 </div>
             </div>
         </div>
