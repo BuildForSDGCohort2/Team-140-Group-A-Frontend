@@ -103,6 +103,10 @@ body {
     color: $secondary-dark;
 }
 
+.text_danger {
+    color: $danger;
+}
+
 .focus_outline_none {
     &:focus {
         outline: 0;
@@ -254,6 +258,40 @@ input {
     }
 }
 
+.page_sidenav {
+    height: 100%;
+    // width: 250px;
+    // border: 1px solid rgba(243, 227, 227, .5);
+    .inner {
+        background-color: #ffffff;
+        .nav_tab {
+            list-style: none;
+            li:first-child {
+                border-top: 1px solid #e2dbdb;
+            }
+            li {
+                border-bottom: 1px solid #e2dbdb;
+                transition: 300ms ease;
+                padding: 1.4em;
+                &:hover {
+                    background-color: $primary-light;
+                    width: 100%;
+                    height: 100%;
+                    a {
+                        color: $misc;
+                    }
+                }
+                a {
+                    color: $misc;
+                    text-decoration: none;
+                    color: $secondary;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
 // PAGES
 .login_page {
     .main_inner_wrapper {
@@ -301,6 +339,8 @@ input {
         background-blend-mode: soft-light;
     }
 }
+
+.user_account_page {}
 
 // SECTIONS
 .hero {

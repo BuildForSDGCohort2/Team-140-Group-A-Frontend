@@ -64,6 +64,9 @@ body {
 .text_secondary_dark {
   color: #000000; }
 
+.text_danger {
+  color: #ea3d32; }
+
 .focus_outline_none:focus {
   outline: 0; }
 
@@ -162,6 +165,30 @@ input {
       font-size: 0.8rem; }
     .select_drop_wrapper select::after {
       content: "hhhhh"; }
+
+.page_sidenav {
+  height: 100%; }
+  .page_sidenav .inner {
+    background-color: #ffffff; }
+    .page_sidenav .inner .nav_tab {
+      list-style: none; }
+      .page_sidenav .inner .nav_tab li:first-child {
+        border-top: 1px solid #e2dbdb; }
+      .page_sidenav .inner .nav_tab li {
+        border-bottom: 1px solid #e2dbdb;
+        transition: 300ms ease;
+        padding: 1.4em; }
+        .page_sidenav .inner .nav_tab li:hover {
+          background-color: #757ce8;
+          width: 100%;
+          height: 100%; }
+          .page_sidenav .inner .nav_tab li:hover a {
+            color: #ffffff; }
+        .page_sidenav .inner .nav_tab li a {
+          color: #ffffff;
+          text-decoration: none;
+          color: #212121;
+          font-weight: 500; }
 
 .login_page .main_inner_wrapper {
   height: 90vh; }

@@ -27,7 +27,7 @@
                         </div>
                         <div class="form-group col-4 col-md-4">
                             <label for="gender">Gender</label>
-                            <div class="select_drop_wrapper fontawesome_pseudo">
+                            <div class="select_drop_wrapper fontawesome_pseudo p-0">
                                 <select id="inputGender" class="form-control">
                                     <option value="male" selected>Male</option>
                                     <option value="female">Female</option>
@@ -42,10 +42,12 @@
                         </div>
                         <div class="form-group col-md-4">
                             <label for="state">State</label>
-                            <select id="inputState" class="form-control">
-                                <option value="abuja" selected>Abuja</option>
-                                <option value="lagos">Lagos</option>
-                            </select>
+                            <div class="select_drop_wrapper fontawesome_pseudo p-0">
+                                <select id="inputState" class="form-control">
+                                    <option value="abuja" selected>Abuja</option>
+                                    <option value="lagos">Lagos</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
