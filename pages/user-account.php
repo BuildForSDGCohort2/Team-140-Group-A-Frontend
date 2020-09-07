@@ -15,18 +15,18 @@
                 <nav class="page_sidenav rounded mt-3">
                     <div class="inner">
                         <div class="px-1 py-3 text-center sidenav_header bg-dark text-white">
-                            <h5>My Account</h5>
+                            <h5 class="text_capitalize">My Account</h5>
                         </div>
                         <div class="mb-1">
                             <ul class="nav_tab">
-                                <li>
-                                    <a href="#">Profile</a>
+                                <li class="active">
+                                    <a href="./user-account.php">Profile</a>
                                 </li>
                                 <li>
-                                    <a href="#">Appointments</a>
+                                    <a href="./booking-appointment.php">Booking Appointments</a>
                                 </li>
                                 <li>
-                                    <a href="#">Schedule Appointment</a>
+                                    <a href="./schedule-appointment.php">Schedule Appointment</a>
                                 </li>
                             </ul>
                         </div>
@@ -43,6 +43,9 @@
                                 <strong>Email Address:</strong>&nbsp;<span>alli_2020@gmail.com</span>
                             </div>
                             <div>
+                                <strong>Phone Number:</strong>&nbsp;<span>+234 802 6387 322</span>
+                            </div>
+                            <div>
                                 <strong>Gender:</strong>&nbsp;<span>Male</span>
                             </div>
                             <div>
@@ -55,7 +58,7 @@
                     <div class="card border-0 shadow my-4">
                         <div class="card-body">
                             <div class="text-center py-3">
-                                <h5>Your appointment booking history</h5>
+                                <h5 class="text_capitalize">Your appointment booking history</h5>
                             </div>
 
                             <table class="table">
@@ -64,7 +67,7 @@
                                         <th scope="col">S/N</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Time</th>
-                                        <th scope="col">Health care center</th>
+                                        <th scope="col">Health Care Center</th>
                                         <th scope="col">Visited Department</th>
                                     </tr>
                                 </thead>
@@ -73,15 +76,15 @@
                                         <th scope="row">1</th>
                                         <td>23/05/2020</td>
                                         <td>13:00</td>
-                                        <td>Ikeja Gen hospital</td>
-                                        <td>Dentistry</td>
+                                        <td>Lagos State University Teaching Hospital</td>
+                                        <td>Family Health</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">2</th>
                                         <td>03/01/2019</td>
                                         <td>09:45</td>
-                                        <td>Maryland Health center</td>
-                                        <td>Dentistry</td>
+                                        <td>Gbagada General Hospital</td>
+                                        <td>Family Health</td>
                                     </tr>
                                 </tbody>
                             </table>

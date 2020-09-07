@@ -70,12 +70,47 @@ body {
 .focus_outline_none:focus {
   outline: 0; }
 
+ul.remove_style {
+  list-style: none; }
+
+.d_flex {
+  display: flex; }
+
+.flex_align_center {
+  align-items: center; }
+
+.flex_just_spaceBetween {
+  justify-content: space-between; }
+
 .form-control {
   border-radius: 3px;
   font-size: 0.8rem; }
   .form-control:focus {
     outline: 0;
     box-shadow: none; }
+
+.hidden_radio {
+  position: absolute;
+  opacity: 0; }
+  .hidden_radio ~ label {
+    display: flex;
+    align-items: center; }
+    .hidden_radio ~ label .pseudo_radio {
+      --size: 1.2em;
+      width: var(--size);
+      height: var(--size);
+      margin-right: var(--size);
+      cursor: pointer;
+      border: 0.6px solid #3f50b5;
+      border-radius: 3px;
+      transform: scale(1);
+      transition: transform 300ms ease-in-out;
+      display: grid;
+      place-content: center;
+      border-radius: 50%; }
+
+.hidden_radio:checked ~ label .pseudo_radio {
+  box-shadow: inset 0 0 0 5px #757ce8; }
 
 .custom_background_img {
   background-image: url("../assets/images/main-custom-background-img.png");
@@ -106,6 +141,13 @@ input {
     -webkit-appearance: none; }
   input[type="number"] {
     -moz-appearance: textfield; }
+  input[type="date"] {
+    width: 100%; }
+    input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-calendar-picker-indicator {
+      -webkit-appearance: none;
+      position: absolute;
+      right: 0;
+      opacity: 0; }
 
 .left_content_wrapper {
   display: flex;
@@ -177,12 +219,12 @@ input {
       .page_sidenav .inner .nav_tab li {
         border-bottom: 1px solid #e2dbdb;
         transition: 300ms ease;
-        padding: 1.4em; }
-        .page_sidenav .inner .nav_tab li:hover {
+        padding: 1.2em; }
+        .page_sidenav .inner .nav_tab li:hover, .page_sidenav .inner .nav_tab li.active {
           background-color: #757ce8;
           width: 100%;
           height: 100%; }
-          .page_sidenav .inner .nav_tab li:hover a {
+          .page_sidenav .inner .nav_tab li:hover a, .page_sidenav .inner .nav_tab li.active a {
             color: #ffffff; }
         .page_sidenav .inner .nav_tab li a {
           color: #ffffff;
