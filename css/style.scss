@@ -447,9 +447,10 @@ input {
         width: 70vw;
         height: 100%;
         background-color: $misc;
-        transition: all 300ms ease-in-out;
+        transition: width 300ms ease-in-out;
         &.hide {
             left: -70vw;
+            transition: width 300ms ease-in-out;
         }
         nav {
             box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
@@ -458,6 +459,7 @@ input {
     .sidenav_toggler {
         display: block;
         margin: .5em;
+        background-color: unset;
         .fa-bars,
         .rotate_45 {
             color: $secondary-light;

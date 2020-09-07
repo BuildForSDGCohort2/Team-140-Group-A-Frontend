@@ -1,18 +1,15 @@
 <!-- header -->
 <?php include_once '../components/header.php'; ?>
-<style>
-/* .page_sidenav{
-        height: 100%;
-        background-color: #ffffff;
-        border: 1px solid #ccc;
-        width: 200px;
-    } */
-</style>
 <div class="user_account_page custom_background_img">
     <div class="main_inner_wrapper container">
         <div class="row">
-            <div class="col-md-3">
-                <nav class="page_sidenav rounded mt-3">
+            <div class="col-md-3 page_sidenav hide" id="page_sidenav">
+                
+                <button class="border-0 focus_outline_none sidenav_toggler" type="button" id="sidenav_toggler"
+                    onclick="closeSidenav()">
+                    <i class="fas fa-plus rotate_45"></i>
+                </button>
+                <nav class="rounded mt-3">
                     <div class="inner">
                         <div class="px-1 py-3 text-center sidenav_header bg-dark text-white">
                             <h5 class="text_capitalize">My Account</h5>
@@ -34,6 +31,10 @@
                 </nav>
             </div>
             <div class="col-md-9">
+                <button class="border-0 focus_outline_none sidenav_toggler" type="button" id="sidenav_toggler"
+                    onclick="openSidenav()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <main class="mt-3">
                     <div class="card border-0 shadow m-0">
 

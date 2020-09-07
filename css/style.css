@@ -303,15 +303,17 @@ input {
     width: 70vw;
     height: 100%;
     background-color: #ffffff;
-    transition: all 300ms ease-in-out; }
+    transition: width 300ms ease-in-out; }
     .page_sidenav.hide {
-      left: -70vw; }
+      left: -70vw;
+      transition: width 300ms ease-in-out; }
     .page_sidenav nav {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 
   .sidenav_toggler {
     display: block;
-    margin: .5em; }
+    margin: .5em;
+    background-color: unset; }
     .sidenav_toggler .fa-bars,
     .sidenav_toggler .rotate_45 {
       color: #484848;
