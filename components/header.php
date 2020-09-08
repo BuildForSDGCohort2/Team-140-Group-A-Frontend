@@ -26,9 +26,9 @@
 <body>
 
     <!-- header -->
-    <header>
+    <header class="sticky-top">
         <!-- main navigation -->
-        <nav class="navbar navbar-expand-md navbar-dark sticky-top bg_primary_light">
+        <nav class="navbar navbar-expand-md navbar-dark bg_primary_light">
             <div class="container">
                 <a class="navbar-brand" href="../index.html">BrandLogo</a>
                 <button class="navbar-toggler border-0 focus_outline_none" type="button" data-toggle="collapse"

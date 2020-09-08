@@ -40,7 +40,7 @@
                     <div class="card border-0 shadow my-4">
                         <div class="card-body">
                             <div class="text-center py-3">
-                                <h5 class="text_capitalize"> scheduled an appointment</h5>
+                                <h5 class="text_capitalize"> schedule an appointment</h5>
                             </div>
 
                             <form action="#">
