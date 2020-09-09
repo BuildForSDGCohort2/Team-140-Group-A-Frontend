@@ -88,7 +88,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-block bg_primary_dark _btn">Register</button>
+                                <button type="submit" class="btn btn-block bg_primary_dark _btn">Update</button>
 
                             </form>
                         </div>

@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-12 col-md-6">
-                                        <label for="lagoshospital">Select Health care center</label>
+                                        <label for="lagoshospital">Select Health Care Center</label>
                                         <div class="select_drop_wrapper fontawesome_pseudo p-0">
                                             <select id="lagoshospital" class="form-control">
                                                 <option value="alimosho">Alimosho General Hospital</option>

@@ -307,7 +307,7 @@ input {
 
   .form-control {
     font-size: 1rem; } }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .page_sidenav {
     position: fixed;
     z-index: 1;
@@ -315,10 +315,10 @@ input {
     left: 0;
     height: 100%;
     background-color: #ffffff;
-    transition: width 300ms ease-in-out; }
+    transition: left 300ms ease-in-out; }
     .page_sidenav.hide {
       left: -70vw;
-      transition: width 300ms ease-in-out; }
+      transition: left 300ms ease-in-out; }
     .page_sidenav nav {
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
 
