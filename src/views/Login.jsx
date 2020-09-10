@@ -1,10 +1,33 @@
 import React, {Component} from "react";
 import "../App.css";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 class Login extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      login: "",
+    };
+  }
+  changehandler = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  };
+  submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
+    const {email, login} = this.state;
     return (
       <React.Fragment>
         <div className="login_page">
@@ -12,16 +35,20 @@ class Login extends Component {
             <div className="inner">
               <div className="form_wrapper p-4 shadow">
                 <h5 className="text-center my-3">Login</h5>
+                <hr className="my-2" />
                 {/* <!-- form --> */}
-                <form>
+                <form onSubmit={this.submitHandler}>
                   <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
                     <input
                       type="email"
                       className="form-control"
-                      id="exampleInputEmail1"
+                      id="email"
                       aria-describedby=""
                       placeholder="Enter email"
+                      name="email"
+                      value={email}
+                      onChange={this.changehandler}
                     />
                     <small id="" className="form-text text_danger">
                       Error message else.
@@ -32,19 +59,22 @@ class Login extends Component {
                     <input
                       type="password"
                       className="form-control"
-                      id="exampleInputPassword1"
+                      id="login"
                       placeholder="Password"
+                      name="login"
+                      value={login}
+                      onChange={this.changehandler}
                     />
                     <small id="" className="form-text text_danger">
                       Error message else.
                     </small>
-                    <div className="float-right">
-                      <a href="#" className="regular_link">
+                    <div className="float-right my-2">
+                      <Link to="/reset-password" className="regular_link">
                         Forgot password?
-                      </a>
+                      </Link>
                     </div>
                   </div>
-                  <div className="form-group form-check">
+                  {/* <div className="form-group form-check">
                     <input
                       type="checkbox"
                       className="form-check-input"
@@ -53,7 +83,7 @@ class Login extends Component {
                     <label className="form-check-label" htmlFor="exampleCheck1">
                       Remember me
                     </label>
-                  </div>
+                  </div> */}
                   <button
                     type="submit"
                     className="btn btn-block bg_primary_dark _btn"

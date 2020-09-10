@@ -36,11 +36,9 @@ class UserAccount extends Component {
                 </div>
                 <div>
                   <Link
-                    to="/user-change-phone"
+                    to="/edit-password"
                     className="text_danger nav-link p-0"
-                  >
-                    Change Phone Number
-                  </Link>
+                  >Change password</Link>
                 </div>
               </div>
             </div>
@@ -83,7 +81,6 @@ class UserAccount extends Component {
                 </div>
               </div>
             </div>
-          
           </main>
         </div>
       </React.Fragment>

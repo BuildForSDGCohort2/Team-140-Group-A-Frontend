@@ -1,20 +1,63 @@
 import React, { Component } from "react";
-// import "../App.css";
+import axios from "axios";
 
 
 class MedicalAppointment extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Alli Abayomi",
+      age: "",
+      healthCenter: "",
+      department: "",
+      date: "",
+      time: "",
+      reasonForVisit: "",
+    };
+  }
+  changehandler = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  };
+  submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
+    const {
+      name,
+      age,
+      healthCenter,
+      department,
+      date,
+      time,
+      reasonForVisit,
+    } = this.state;
     return (
       <React.Fragment>
+        <div className="p-4 text-center alert alert-info" role="alert">
+          <h5>
+            Note: We book appointments with doctors only for Tuesdays,
+            Wednesdays and Thursdays
+          </h5>
+        </div>
+        <div className="px-3">
           <div className="mt-3 sized_container">
             <div className="card border-0 shadow my-4">
               <div className="card-body">
                 <div className="text-center py-3">
                   <h5 className="text_capitalize"> schedule an appointment</h5>
+                  <hr className="my-2" />
                 </div>
 
-                <form action="#">
+                <form onSubmit={this.submitHandler}>
                   <div className="form-row">
                     <div className="form-group col-12 col-md-6">
                       <label htmlFor="name">Name</label>
@@ -24,8 +67,9 @@ class MedicalAppointment extends Component {
                           className="form-control"
                           name="name"
                           id="name"
-                          value="Alli Abayomi"
                           readOnly
+                          value={name}
+                          onChange={this.changehandler}
                         />
                       </div>
                     </div>
@@ -37,6 +81,8 @@ class MedicalAppointment extends Component {
                           className="form-control"
                           name="age"
                           id="age"
+                          value={age}
+                          onChange={this.changehandler}
                         />
                       </div>
                     </div>
@@ -47,7 +93,16 @@ class MedicalAppointment extends Component {
                         Select Health Care Center
                       </label>
                       <div className="select_drop_wrapper fontawesome_pseudo p-0">
-                        <select id="lagoshospital" className="form-control">
+                        <select
+                          id="lagoshospital"
+                          className="form-control"
+                          name="healthCenter"
+                          value={healthCenter}
+                          onChange={this.changehandler}
+                        >
+                          <option value="" value>
+                            Health care center
+                          </option>
                           <option value="alimosho">
                             Alimosho General Hospital
                           </option>
@@ -61,9 +116,20 @@ class MedicalAppointment extends Component {
                       </div>
                     </div>
                     <div className="form-group col-12 col-md-6">
-                      <label htmlFor="department">Select Health Department</label>
+                      <label htmlFor="department">
+                        Select Health Department
+                      </label>
                       <div className="select_drop_wrapper fontawesome_pseudo p-0">
-                        <select id="department" className="form-control">
+                        <select
+                          id="department"
+                          className="form-control"
+                          name="department"
+                          value={department}
+                          onChange={this.changehandler}
+                        >
+                          <option value="" value>
+                            Department
+                          </option>
                           <option value="publicHealth">Public Health</option>
                           <option value="familyHealth">Family Health</option>
                           <option value="hospitalServices">
@@ -83,6 +149,8 @@ class MedicalAppointment extends Component {
                           className="form-control"
                           name="date"
                           id="date"
+                          value={date}
+                          onChange={this.changehandler}
                         />
                       </div>
                     </div>
@@ -95,6 +163,8 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time1"
                             className="hidden_radio"
+                            value={time}
+                            onChange={this.changehandler}
                           />
                           <label htmlFor="time1">
                             <span className="pseudo_radio"></span>
@@ -107,6 +177,8 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time2"
                             className="hidden_radio"
+                            value={time}
+                            onChange={this.changehandler}
                           />
                           <label htmlFor="time2">
                             <span className="pseudo_radio"></span>
@@ -119,6 +191,8 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time3"
                             className="hidden_radio"
+                            value={time}
+                            onChange={this.changehandler}
                           />
                           <label htmlFor="time3">
                             <span className="pseudo_radio"></span>
@@ -134,11 +208,13 @@ class MedicalAppointment extends Component {
                       <label htmlFor="date">Reason For Visit</label>
                       <div className="p-0">
                         <textarea
-                          name="reason_for_visit"
+                          name="reasonForVisit"
                           id="reason_for_visit"
                           className="w-100 form-control"
                           cols="30"
                           rows="4"
+                          value={reasonForVisit}
+                          onChange={this.changehandler}
                         ></textarea>
                       </div>
                     </div>
@@ -155,6 +231,7 @@ class MedicalAppointment extends Component {
               </div>
             </div>
           </div>
+        </div>
       </React.Fragment>
     );
   }

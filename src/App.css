@@ -261,7 +261,7 @@ ul.remove_style {
     /* // Custom form select dropdown */
 }
 
-.hero_btn{
+.hero_btn {
     display: inline-block;
 }
 
@@ -416,17 +416,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-weight: 500;
 }
 
-.login_page .main_inner_wrapper {
+.login_page .main_inner_wrapper,
+.reset_password_page .main_inner_wrapper {
     height: 90vh;
 }
 
-.login_page .main_inner_wrapper .inner {
+.login_page .main_inner_wrapper .inner,
+.reset_password_page .main_inner_wrapper .inner,
+.edit_password_page .main_inner_wrapper .inner {
     height: 100%;
     display: flex;
     align-items: center;
 }
 
-.login_page .main_inner_wrapper .form_wrapper {
+.login_page .main_inner_wrapper .form_wrapper,
+.reset_password_page .main_inner_wrapper .form_wrapper,
+.edit_password_page .main_inner_wrapper .form_wrapper {
     width: 100%;
     background-color: #ffffff;
     max-width: 500px;
@@ -449,6 +454,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: #ffffff;
     max-width: 600px;
     margin: 0 auto;
+}
+
+.edit_password_page .main_inner_wrapper {
+    padding-top: 4em;
 }
 
 .bmi_calculator_page .page_banner {

@@ -12,20 +12,21 @@ class Header extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* Test react icons */}
+        <FaBeer />
         {/*  */}
         <Navbar
           expand="lg"
-          className="sticky-top  navbar-dark bg_primary_light sticky-top"
+          className="sticky-top navbar-dark bg_primary_light sticky-top"
         >
           <div className="container">
             {/* <FontAwesomeIcon icon="check-square" /> */}
             {/*  */}
-            <FaBeer />
             {/* <Navbar.Brand href="#home">SmartHealthcare</Navbar.Brand> */}
 
-            <Navbar.Brand href="#home">
+            <Navbar.Brand>
               {/* <Link to="/home"> */}
-                SmartHealthcare
+              SmartHealthcare
               {/* </Link> */}
             </Navbar.Brand>
             <Navbar.Toggle
@@ -51,12 +52,12 @@ class Header extends Component {
                 </NavLink>
                 <NavDropdown title="Account" id="basic-nav-dropdown">
                   {/* <NavDropdown.Item> */}
-                    <NavLink
-                      className="nav-link text-dark"
-                      to="/user-account/012"
-                    >
-                      Profile
-                    </NavLink>
+                  <NavLink
+                    className="nav-link text-dark"
+                    to="/user-account/012"
+                  >
+                    Profile
+                  </NavLink>
                   {/* </NavDropdown.Item> */}
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.3">

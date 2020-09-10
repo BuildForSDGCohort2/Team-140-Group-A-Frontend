@@ -1,10 +1,47 @@
 import React, {Component} from "react";
-import "../App.css";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 class Register extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstname: "",
+      lastname: "",
+      email: "",
+      gender: "",
+      phone: "",
+      address: "",
+      state: "",
+      password: "",
+    };
+  }
+  changehandler = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  };
+  submitHandler = (e) => {
+    e.preventDefault();
+    console.log(this.state);
+    axios
+      .post("https://jsonplaceholder.typicode.com/posts", this.state)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   render() {
+    const {
+      firstname,
+      lastname,
+      email,
+      gender,
+      phone,
+      address,
+      state,
+      password,
+    } = this.state;
     return (
       <React.Fragment>
         <div className="register_page custom_background_img">
@@ -12,8 +49,9 @@ class Register extends Component {
             <div className="inner">
               <div className="form_wrapper p-4 shadow">
                 <h5 className="text-center my-3">Register</h5>
+                <hr className="my-2" />
                 {/* <!-- form --> */}
-                <form action="#">
+                <form onSubmit={this.submitHandler}>
                   <div className="form-row">
                     <div className="form-group col-md-6">
                       <label htmlFor="firstname">First Name</label>
@@ -22,6 +60,8 @@ class Register extends Component {
                         className="form-control"
                         id="firstname"
                         name="firstname"
+                        value={firstname}
+                        onChange={this.changehandler}
                       />
                     </div>
                     <div className="form-group col-md-6">
@@ -31,6 +71,8 @@ class Register extends Component {
                         className="form-control"
                         id="lastname"
                         name="lastname"
+                        value={lastname}
+                        onChange={this.changehandler}
                       />
                     </div>
                   </div>
@@ -42,15 +84,24 @@ class Register extends Component {
                         className="form-control"
                         id="email"
                         name="email"
+                        value={email}
+                        onChange={this.changehandler}
                       />
                     </div>
                     <div className="form-group col-4 col-md-4">
                       <label htmlFor="gender">Gender</label>
                       <div className="select_drop_wrapper fontawesome_pseudo p-0">
-                        <select id="inputGender" className="form-control">
-                          <option defaultValue="male" value>
-                            Male
+                        <select
+                          id="inputGender"
+                          className="form-control"
+                          name="gender"
+                          value={gender}
+                          onChange={this.changehandler}
+                        >
+                          <option defaultValue="" value>
+                            Select Gender
                           </option>
+                          <option defaultValue="male">Male</option>
                           <option defaultValue="female">Female</option>
                         </select>
                       </div>
@@ -64,6 +115,8 @@ class Register extends Component {
                         className="form-control"
                         id="phone"
                         name="phone"
+                        value={phone}
+                        onChange={this.changehandler}
                       />
                     </div>
                   </div>
@@ -75,15 +128,24 @@ class Register extends Component {
                         className="form-control"
                         id="address"
                         name="address"
+                        value={address}
+                        onChange={this.changehandler}
                       />
                     </div>
                     <div className="form-group col-md-4">
                       <label htmlFor="state">State</label>
                       <div className="select_drop_wrapper fontawesome_pseudo p-0">
-                        <select id="inputState" className="form-control">
-                          <option defaultValue="abuja" value>
-                            Abuja
+                        <select
+                          id="inputState"
+                          className="form-control"
+                          name="state"
+                          value={state}
+                          onChange={this.changehandler}
+                        >
+                          <option defaultValue="" value>
+                            Select State
                           </option>
+                          <option defaultValue="abuja">Abuja</option>
                           <option defaultValue="lagos">Lagos</option>
                         </select>
                       </div>
@@ -98,6 +160,8 @@ class Register extends Component {
                         className="form-control"
                         id="password"
                         name="password"
+                        value={password}
+                        onChange={this.changehandler}
                       />
                     </div>
                     <div className="form-group col-6">
@@ -107,6 +171,7 @@ class Register extends Component {
                         className="form-control"
                         id="confirmPassword"
                         name="confirmPassword"
+                        // value={confirmPassword}
                       />
                       <small id="" className="form-text text-danger">
                         Error message else.
