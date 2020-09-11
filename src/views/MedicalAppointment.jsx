@@ -11,7 +11,7 @@ class MedicalAppointment extends Component {
       healthCenter: "",
       department: "",
       date: "",
-      time: "",
+      time: "9:00",
       reasonForVisit: "",
     };
   }
@@ -37,7 +37,6 @@ class MedicalAppointment extends Component {
       healthCenter,
       department,
       date,
-      time,
       reasonForVisit,
     } = this.state;
     return (
@@ -100,8 +99,8 @@ class MedicalAppointment extends Component {
                           value={healthCenter}
                           onChange={this.changehandler}
                         >
-                          <option value="" value>
-                            Health care center
+                          <option value="" defaultValue>
+                            Select health care center
                           </option>
                           <option value="alimosho">
                             Alimosho General Hospital
@@ -127,8 +126,8 @@ class MedicalAppointment extends Component {
                           value={department}
                           onChange={this.changehandler}
                         >
-                          <option value="" value>
-                            Department
+                          <option value="" defaultValue>
+                            Select department
                           </option>
                           <option value="publicHealth">Public Health</option>
                           <option value="familyHealth">Family Health</option>
@@ -163,8 +162,9 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time1"
                             className="hidden_radio"
-                            value={time}
+                            value="9:00"
                             onChange={this.changehandler}
+                            defaultChecked
                           />
                           <label htmlFor="time1">
                             <span className="pseudo_radio"></span>
@@ -177,7 +177,7 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time2"
                             className="hidden_radio"
-                            value={time}
+                            value="12:00"
                             onChange={this.changehandler}
                           />
                           <label htmlFor="time2">
@@ -191,7 +191,7 @@ class MedicalAppointment extends Component {
                             name="time"
                             id="time3"
                             className="hidden_radio"
-                            value={time}
+                            value="15:00"
                             onChange={this.changehandler}
                           />
                           <label htmlFor="time3">

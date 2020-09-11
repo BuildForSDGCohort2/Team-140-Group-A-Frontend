@@ -59,7 +59,6 @@ class Testing extends Component {
                         <td>{user.dept}</td>
                       </tr>
                     );
-                    console.log(<td>{user}</td>);
                   })}
                 </tbody>
               </table>

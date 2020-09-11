@@ -1,14 +1,80 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import {Button, Modal} from "react-bootstrap";
 
-
-function calcBMI(){
-  alert("hello");
-}
 class Bmi extends Component {
-  state = {};
+  constructor() {
+    super();
+    this.state = {
+      height: "",
+      weight: "",
+      age: "",
+      gender: "",
+      // toggle modal popup
+      show: false,
+      // show bmi result
+      result: "",
+      formFillError: false,
+    };
+  }
+  // 
+  handleModal = () => {
+    this.setState({show: !this.state.show});
+  };
+  // 
+  changehandler = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  };
+  submitHandler = (e) => {
+    e.preventDefault();
+    // console.log(this.state);
+    let h = parseInt(this.state.height);
+    let w = parseInt(this.state.weight);
+    h *= h;
+    if (this.state.height && this.state.weight) {
+      var result = (w / h).toFixed(2);
+      console.log(`BMI result = ${result}`);
+      // this.state.result = result;
+      this.setState({result: (this.state.result = result)});
+      this.setState({show: !this.state.show});
+    } else {
+      return
+    }
+  };
+
+  // formFillHandler=() =>{
+  //   this.setState({formFillError: !this.state.formFillError})
+  // }
+  
   render() {
+    const { height, weight, age, gender } = this.state;
     return (
       <React.Fragment>
+        <h4>My result</h4>
+        <Modal
+          show={this.state.show}
+          onHide={() => {
+            this.handleModal();
+          }}
+        >
+          <Modal.Header closeButton>BMI Calculation</Modal.Header>
+          <Modal.Body>Your BMI calculation is: {this.state.result}</Modal.Body>
+          <Modal.Footer>
+            <Button
+              onClick={() => {
+                this.handleModal();
+              }}
+            >
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+        <Button
+          onClick={() => {
+            this.handleModal();
+          }}
+        >
+          Button
+        </Button>
         <div className="bmi_calculator_page custom_background_img">
           <section className="page_banner">
             <div className="container py-5 text-white">
@@ -32,51 +98,67 @@ class Bmi extends Component {
                       </h4>
                     </div>
                     <div className="container">
-                      <form id="BMIForm">
+                      <form id="BMIForm" onSubmit={this.submitHandler}>
+                        <div className="alert alert-danger" role="alert">
+                          Please fill the form!
+                        </div>
                         <div className="form-row">
                           <div className="form-group col-md-6">
-                            <label htmlFor="Height">Height (inches)</label>
+                            <label htmlFor="height">Height (inches)</label>
                             <input
                               type="text"
                               className="form-control"
-                              id="Height"
-                              name="Height"
+                              id="height"
+                              name="height"
+                              value={height}
+                              onChange={this.changehandler}
                             />
                           </div>
                           <div className="form-group col-md-6">
-                            <label htmlFor="Weight">Weight (kg)</label>
+                            <label htmlFor="weight">Weight (kg)</label>
                             <input
                               type="text"
                               className="form-control"
-                              id="Weight"
-                              name="Weight"
+                              id="weight"
+                              name="weight"
+                              value={weight}
+                              onChange={this.changehandler}
                             />
                           </div>
                         </div>
                         <div className="form-row">
                           <div className="form-group col-6">
-                            <label htmlFor="Age">Age</label>
+                            <label htmlFor="age">Age</label>
                             <input
                               type="number"
                               className="form-control"
-                              id="Age"
-                              name="Age"
+                              id="age"
+                              name="age"
+                              value={age}
+                              onChange={this.changehandler}
                             />
                           </div>
                           <div className="form-group col-6">
-                            <label htmlFor="Gender">Gender</label>
+                            <label htmlFor="gender">Gender</label>
                             <div className="select_drop_wrapper fontawesome_pseudo">
-                              <select id="Gender" className="form-control">
-                                <option value="male" value>
-                                  Male
+                              <select
+                                id="gender"
+                                className="form-control"
+                                name="gender"
+                                value={gender}
+                                onChange={this.changehandler}
+                              >
+                                <option value="" defaultValue>
+                                  Gender
                                 </option>
+                                <option value="male">Male</option>
                                 <option value="female">Female</option>
                               </select>
                             </div>
                           </div>
                         </div>
                         <button
-                          type="button"
+                          type="submit"
                           className="btn btn-block bg_primary_dark _btn"
                           id="BMIFormBtn"
                         >
