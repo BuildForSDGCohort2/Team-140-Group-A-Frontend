@@ -16,7 +16,7 @@ class UserEditProfile extends Component {
                     <form action="#">
                       <div className="form-row">
                         <div className="form-group col-md-6">
-                          <label for="firstname">First Name</label>
+                          <label htmlFor="firstname">First Name</label>
                           <input
                             type="text"
                             className="form-control"
@@ -25,7 +25,7 @@ class UserEditProfile extends Component {
                           />
                         </div>
                         <div className="form-group col-md-6">
-                          <label for="lastname">Last Name</label>
+                          <label htmlFor="lastname">Last Name</label>
                           <input
                             type="text"
                             className="form-control"
@@ -36,7 +36,7 @@ class UserEditProfile extends Component {
                       </div>
                       <div className="form-row">
                         <div className="form-group col-8 col-md-8">
-                          <label for="email">Email Address</label>
+                          <label htmlFor="email">Email Address</label>
                           <input
                             type="email"
                             className="form-control"
@@ -45,7 +45,7 @@ class UserEditProfile extends Component {
                           />
                         </div>
                         <div className="form-group col-4 col-md-4">
-                          <label for="gender">Gender</label>
+                          <label htmlFor="gender">Gender</label>
                           <div className="select_drop_wrapper fontawesome_pseudo p-0">
                             <select id="inputGender" className="form-control">
                               <option value="male" selected>
@@ -58,7 +58,7 @@ class UserEditProfile extends Component {
                       </div>
                       <div className="form-row">
                         <div className="form-group col-12">
-                          <label for="phone">Phone Number</label>
+                          <label htmlFor="phone">Phone Number</label>
                           <input
                             type="text"
                             className="form-control"
@@ -69,7 +69,7 @@ class UserEditProfile extends Component {
                       </div>
                       <div className="form-row">
                         <div className="form-group col-md-8">
-                          <label for="address">Address</label>
+                          <label htmlFor="address">Address</label>
                           <input
                             type="text"
                             className="form-control"
@@ -78,7 +78,7 @@ class UserEditProfile extends Component {
                           />
                         </div>
                         <div className="form-group col-md-4">
-                          <label for="state">State</label>
+                          <label htmlFor="state">State</label>
                           <div className="select_drop_wrapper fontawesome_pseudo p-0">
                             <select id="inputState" className="form-control">
                               <option value="abuja" selected>

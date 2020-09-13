@@ -15,6 +15,10 @@ class Bmi extends Component {
       result: "",
       formFillError: false,
     };
+
+    this.handleModal = this.handleModal.bind(this);
+    this.changehandler = this.changehandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   }
   // 
   handleModal = () => {
@@ -33,8 +37,11 @@ class Bmi extends Component {
     if (this.state.height && this.state.weight) {
       var result = (w / h).toFixed(2);
       console.log(`BMI result = ${result}`);
-      // this.state.result = result;
-      this.setState({result: (this.state.result = result)});
+      this.setState(prevState => {
+        return {
+          result: (prevState.result = result),
+        };
+      })
       this.setState({show: !this.state.show});
     } else {
       return
