@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Footer from "../components/Footer";
 import {Link} from "react-router-dom";
+import "../App.css";
 
 class Home extends Component {
   state = {};
